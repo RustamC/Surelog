@@ -611,9 +611,9 @@ add_custom_command(
   TARGET surelog-bin
   POST_BUILD
   COMMAND echo "       Staging for precompiled packages ..."
-  COMMAND ${CMAKE_COMMAND} -E create_symlink ${PROJECT_SOURCE_DIR}/third_party/UVM/ovm-2.1.2 ovm-2.1.2
-  COMMAND ${CMAKE_COMMAND} -E create_symlink ${PROJECT_SOURCE_DIR}/third_party/UVM/1800.2-2017-1.0 1800.2-2017-1.0
-  COMMAND ${CMAKE_COMMAND} -E create_symlink ${PROJECT_SOURCE_DIR}/third_party/UVM/vmm-1.1.1a vmm-1.1.1a
+  COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/third_party/UVM/ovm-2.1.2 ovm-2.1.2
+  COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/third_party/UVM/1800.2-2017-1.0 1800.2-2017-1.0
+  COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/third_party/UVM/vmm-1.1.1a vmm-1.1.1a
   COMMAND echo "       ... staging completed."
   WORKING_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 
@@ -850,5 +850,5 @@ install(
 
 ADD_CUSTOM_TARGET(
   link_target ALL
-  COMMAND ${CMAKE_COMMAND} -E create_symlink
-  build/compile_commands.json ${PROJECT_SOURCE_DIR}/compile_commands.json)
+  COMMAND ${CMAKE_COMMAND} -E copy
+  ${PROJECT_SOURCE_DIR}/build/compile_commands.json ${PROJECT_SOURCE_DIR}/compile_commands.json)

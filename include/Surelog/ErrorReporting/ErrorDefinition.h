@@ -28,7 +28,7 @@
 #include <map>
 #include <string>
 #include <string_view>
-
+#undef ERROR
 namespace SURELOG {
 
 class ErrorDefinition {
