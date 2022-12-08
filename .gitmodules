@@ -3,7 +3,8 @@
 	url = https://github.com/google/flatbuffers.git
 [submodule "third_party/UHDM"]
 	path = third_party/UHDM
-	url = https://github.com/RustamC/UHDM/tree/win-static-build-024
+	url = https://github.com/RustamC/UHDM.git
+	branch = win-static-build-024
 [submodule "third_party/googletest"]
 	path = third_party/googletest
 	url = https://github.com/google/googletest.git
